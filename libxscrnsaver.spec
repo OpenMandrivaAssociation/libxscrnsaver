@@ -1,8 +1,8 @@
 %define libxscrnsaver %mklibname xscrnsaver 1 
 Name: libxscrnsaver
 Summary:  The XScrnSaver Library
-Version: 1.1.3
-Release: %mkrel 2
+Version: 1.2.0
+Release: %mkrel 1
 Group: Development/X11
 License: MIT
 URL: http://xorg.freedesktop.org
