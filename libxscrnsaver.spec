@@ -51,6 +51,7 @@ Development files for %{name}
 %{_libdir}/pkgconfig/xscrnsaver.pc
 %{_mandir}/man3/XScreenSaver*
 %{_mandir}/man3/Xss*
+%{_includedir}/X11/extensions/scrnsaver.h
 
 #-----------------------------------------------------------
 
