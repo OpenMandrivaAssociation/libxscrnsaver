@@ -2,7 +2,7 @@
 Name: libxscrnsaver
 Summary:  The XScrnSaver Library
 Version: 1.2.0
-Release: %mkrel 1
+Release: %mkrel 2
 Group: Development/X11
 License: MIT
 URL: http://xorg.freedesktop.org
@@ -11,7 +11,7 @@ BuildRoot: %{_tmppath}/%{name}-root
 
 BuildRequires: libx11-devel >= 1.0.0
 BuildRequires: libxext-devel >= 1.0.0
-BuildRequires: x11-proto-devel >= 1.0.0
+BuildRequires: x11-proto-devel >= 7.4-25mdv
 BuildRequires: x11-util-macros >= 1.0.1
 
 %description
@@ -36,7 +36,7 @@ Group: Development/X11
 
 
 Requires: %{libxscrnsaver} = %{version}
-Requires: x11-proto-devel >= 1.0.0
+Requires: x11-proto-devel >= 7.4-25mdv
 Provides: libxscrnsaver-devel = %{version}-%{release}
 
 Conflicts: libxorg-x11-devel < 7.0
