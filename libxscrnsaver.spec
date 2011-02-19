@@ -14,7 +14,7 @@ BuildRoot: %{_tmppath}/%{name}-root
 
 BuildRequires: libx11-devel >= 1.0.0
 BuildRequires: libxext-devel >= 1.0.0
-BuildRequires: x11-proto-devel >= 7.4-25mdv
+BuildRequires: x11-proto-devel >= 7.4-25
 BuildRequires: x11-util-macros >= 1.0.1
 
 %description
@@ -42,7 +42,7 @@ Requires: %{libname} = %{version}-%{release}
 Requires: x11-proto-devel >= 7.4-25
 Provides: libxscrnsaver-devel = %{version}-%{release}
 Provides: libxscrnsaver1-devel = %{version}-%{release}
-Obsoletes: %{mklibname xscrnsaver -1 -d}
+Obsoletes: %{mklibname xscrnsaver 1 -d}
 
 Conflicts: libxorg-x11-devel < 7.0
 
@@ -66,7 +66,7 @@ Group: Development/X11
 Requires: %{develname} = %{version}-%{release}
 Provides: libxscrnsaver-static-devel = %{version}-%{release}
 Provides: libxscrnsaver1-static-devel = %{version}-%{release}
-Obsoletes: %{mklibname xscrnsaver -1 -s -d}
+Obsoletes: %{mklibname xscrnsaver 1 -s -d}
 
 Conflicts: libxorg-x11-static-devel < 7.0
 
