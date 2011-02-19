@@ -1,8 +1,11 @@
-%define libxscrnsaver %mklibname xscrnsaver 1 
+%define libname %mklibname xscrnsaver 1 
+%define develname %mklibname xscrnsaver -d
+%define staticname %mklibname xscrnsaver -s -d
+
 Name: libxscrnsaver
 Summary:  The XScrnSaver Library
 Version: 1.2.1
-Release: %mkrel 1
+Release: %mkrel 2
 Group: Development/X11
 License: MIT
 URL: http://xorg.freedesktop.org
@@ -19,32 +22,34 @@ The XScrnSaver Library
 
 #-----------------------------------------------------------
 
-%package -n %{libxscrnsaver}
+%package -n %{libname}
 Summary:  The XScrnSaver Library
 Group: Development/X11
 Conflicts: libxorg-x11 < 7.0
 Provides: %{name} = %{version}
 
-%description -n %{libxscrnsaver}
+%description -n %{libname}
  The XScrnSaver Library
 
 #-----------------------------------------------------------
 
-%package -n %{libxscrnsaver}-devel
+%package -n %{develname}
 Summary: Development files for %{name}
 Group: Development/X11
 
 
-Requires: %{libxscrnsaver} = %{version}
-Requires: x11-proto-devel >= 7.4-25mdv
+Requires: %{libname} = %{version}-%{release}
+Requires: x11-proto-devel >= 7.4-25
 Provides: libxscrnsaver-devel = %{version}-%{release}
+Provides: libxscrnsaver1-devel = %{version}-%{release}
+Obsoletes: %{mklibname xscrnsaver -1 -d}
 
 Conflicts: libxorg-x11-devel < 7.0
 
-%description -n %{libxscrnsaver}-devel
+%description -n %{develname}
 Development files for %{name}
 
-%files -n %{libxscrnsaver}-devel
+%files -n %{develname}
 %defattr(-,root,root)
 %{_libdir}/libXss.so
 %{_libdir}/libXss.la
@@ -55,18 +60,20 @@ Development files for %{name}
 
 #-----------------------------------------------------------
 
-%package -n %{libxscrnsaver}-static-devel
+%package -n %{staticname}
 Summary: Static development files for %{name}
 Group: Development/X11
-Requires: %{libxscrnsaver}-devel = %{version}
+Requires: %{develname} = %{version}-%{release}
 Provides: libxscrnsaver-static-devel = %{version}-%{release}
+Provides: libxscrnsaver1-static-devel = %{version}-%{release}
+Obsoletes: %{mklibname xscrnsaver -1 -s -d}
 
 Conflicts: libxorg-x11-static-devel < 7.0
 
-%description -n %{libxscrnsaver}-static-devel
+%description -n %{staticname}
 Static development files for %{name}
 
-%files -n %{libxscrnsaver}-static-devel
+%files -n %{staticname}
 %defattr(-,root,root)
 %{_libdir}/libXss.a
 
@@ -95,7 +102,7 @@ rm -rf %{buildroot}
 %postun -p /sbin/ldconfig
 %endif
 
-%files -n %{libxscrnsaver}
+%files -n %{libname}
 %defattr(-,root,root)
 %{_libdir}/libXss.so.1
 %{_libdir}/libXss.so.1.0.0
