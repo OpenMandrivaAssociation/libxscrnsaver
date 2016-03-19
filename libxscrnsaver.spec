@@ -5,7 +5,7 @@
 Summary:	The XScrnSaver Library
 Name:		libxscrnsaver
 Version:	1.2.2
-Release:	13
+Release:	14
 Group:		Development/X11
 License:	MIT
 Url:		http://xorg.freedesktop.org
