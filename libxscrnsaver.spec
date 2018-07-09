@@ -10,7 +10,6 @@ Group:		Development/X11
 License:	MIT
 Url:		http://xorg.freedesktop.org
 Source0:	http://xorg.freedesktop.org/releases/individual/lib/libXScrnSaver-%{version}.tar.bz2
-Patch0:		0000-Copy-root-field-from-wire-event-into-root-not-window.patch
 BuildRequires:	pkgconfig(x11)
 BuildRequires:	pkgconfig(xext)
 BuildRequires:	pkgconfig(xorg-macros)
