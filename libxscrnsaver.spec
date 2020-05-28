@@ -1,4 +1,4 @@
-# libxcursor is used by wine
+# libxcursor is used by steam
 %ifarch %{x86_64}
 %bcond_without compat32
 %else
