@@ -1,18 +1,13 @@
-# libxcursor is used by steam
+# libxscrnsaver is used by sdl2 and steam
 %ifarch %{x86_64}
 %bcond_without compat32
-%else
-%bcond_with compat32
 %endif
 
 %define major 1
 %define libname %mklibname xscrnsaver %{major}
 %define devname %mklibname xscrnsaver -d
-
-%if %{with compat32}
 %define lib32name xscrnsaver%{major}
 %define dev32name libxscrnsaver-devel
-%endif
 
 Summary:	The XScrnSaver Library
 Name:		libxscrnsaver
@@ -24,11 +19,16 @@ Url:		http://xorg.freedesktop.org
 Source0:	http://xorg.freedesktop.org/releases/individual/lib/libXScrnSaver-%{version}.tar.bz2
 BuildRequires:	pkgconfig(x11)
 BuildRequires:	pkgconfig(xext)
+BuildRequires:	pkgconfig(xextproto)
+BuildRequires:	pkgconfig(scrnsaverproto)
 BuildRequires:	pkgconfig(xorg-macros)
 BuildRequires:	pkgconfig(xproto)
 %if %{with compat32}
 BuildRequires:	devel(libX11)
 BuildRequires:	devel(libXext)
+BuildRequires:	devel(libxcb)
+BuildRequires:	devel(libXau)
+BuildRequires:	devel(libXdmcp)
 %endif
 
 %description
