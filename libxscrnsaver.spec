@@ -6,13 +6,13 @@
 %define major 1
 %define libname %mklibname xscrnsaver %{major}
 %define devname %mklibname xscrnsaver -d
-%define lib32name xscrnsaver%{major}
+%define lib32name libxscrnsaver%{major}
 %define dev32name libxscrnsaver-devel
 
 Summary:	The XScrnSaver Library
 Name:		libxscrnsaver
 Version:	1.2.3
-Release:	3
+Release:	4
 Group:		Development/X11
 License:	MIT
 Url:		http://xorg.freedesktop.org
