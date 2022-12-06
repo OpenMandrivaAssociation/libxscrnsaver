@@ -11,12 +11,12 @@
 
 Summary:	The XScrnSaver Library
 Name:		libxscrnsaver
-Version:	1.2.3
-Release:	4
+Version:	1.2.4
+Release:	1
 Group:		Development/X11
 License:	MIT
 Url:		http://xorg.freedesktop.org
-Source0:	http://xorg.freedesktop.org/releases/individual/lib/libXScrnSaver-%{version}.tar.bz2
+Source0:	http://xorg.freedesktop.org/releases/individual/lib/libXScrnSaver-%{version}.tar.xz
 BuildRequires:	pkgconfig(x11)
 BuildRequires:	pkgconfig(xext)
 BuildRequires:	pkgconfig(xextproto)
@@ -24,6 +24,7 @@ BuildRequires:	pkgconfig(scrnsaverproto)
 BuildRequires:	pkgconfig(xorg-macros)
 BuildRequires:	pkgconfig(xproto)
 %if %{with compat32}
+BuildRequires:	libc6
 BuildRequires:	devel(libX11)
 BuildRequires:	devel(libXext)
 BuildRequires:	devel(libxcb)
@@ -73,7 +74,7 @@ Development files for %{name}.
 %setup -qn libXScrnSaver-%{version}
 %autopatch -p1
 
-export CONFIGURE_TOP="`pwd`"
+export CONFIGURE_TOP="$(pwd)"
 %if %{with compat32}
 mkdir build32
 cd build32
@@ -102,8 +103,8 @@ cd build
 %files -n %{devname}
 %{_libdir}/libXss.so
 %{_libdir}/pkgconfig/xscrnsaver.pc
-%{_mandir}/man3/XScreenSaver*
-%{_mandir}/man3/Xss*
+%doc %{_mandir}/man3/XScreenSaver*
+%doc %{_mandir}/man3/Xss*
 %{_includedir}/X11/extensions/scrnsaver.h
 
 %if %{with compat32}
