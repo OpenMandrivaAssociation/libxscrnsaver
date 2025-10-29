@@ -11,8 +11,8 @@
 
 Summary:	The XScrnSaver Library
 Name:		libxscrnsaver
-Version:	1.2.4
-Release:	2
+Version:	1.2.5
+Release:	1
 Group:		Development/X11
 License:	MIT
 Url:		https://xorg.freedesktop.org
@@ -71,8 +71,7 @@ Development files for %{name}.
 %endif
 
 %prep
-%setup -qn libXScrnSaver-%{version}
-%autopatch -p1
+%autosetup -n libXScrnSaver-%{version} -p1
 
 export CONFIGURE_TOP="$(pwd)"
 %if %{with compat32}
